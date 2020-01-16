@@ -16,3 +16,18 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.contract.AbstractContractGetFileStatusTest;
+import org.apache.hadoop.fs.contract.AbstractFSContract;
+
+/**
+ * CosN contract tests covering getFileStatus.
+ */
+public class TestCosNContractGetFileStatus
+    extends AbstractContractGetFileStatusTest {
+  @Override
+  protected AbstractFSContract createContract(Configuration conf) {
+    return new CosNContract(conf);
+  }
+}

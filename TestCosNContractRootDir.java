@@ -16,3 +16,18 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.contract.AbstractContractRootDirectoryTest;
+import org.apache.hadoop.fs.contract.AbstractFSContract;
+
+/**
+ * root dir operations against an COS bucket.
+ */
+public class TestCosNContractRootDir
+    extends AbstractContractRootDirectoryTest {
+  @Override
+  protected AbstractFSContract createContract(Configuration configuration) {
+    return new CosNContract(configuration);
+  }
+}

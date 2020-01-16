@@ -16,3 +16,17 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.contract.AbstractContractCreateTest;
+import org.apache.hadoop.fs.contract.AbstractFSContract;
+
+/**
+ * CosN contract tests for creating files.
+ */
+public class TestCosNContractCreate extends AbstractContractCreateTest {
+  @Override
+  protected AbstractFSContract createContract(Configuration configuration) {
+    return new CosNContract(configuration);
+  }
+}

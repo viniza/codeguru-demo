@@ -16,3 +16,17 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.contract.AbstractContractMkdirTest;
+import org.apache.hadoop.fs.contract.AbstractFSContract;
+
+/**
+ * CosN contract tests for making directories.
+ */
+public class TestCosNContractMkdir extends AbstractContractMkdirTest {
+  @Override
+  protected AbstractFSContract createContract(Configuration configuration) {
+    return new CosNContract(configuration);
+  }
+}
