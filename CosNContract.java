@@ -15,4 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.fs.cosn;
+package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.contract.AbstractBondedFSContract;
+import org.apache.hadoop.fs.cosn.CosNFileSystem;
+import org.apache.hadoop.fs.cosn.CosNTestUtils;
+
+/**
+ * The contract of CosN: only enabled if the test bucket is provided.
+ */
+public class CosNContract extends AbstractBondedFSContract {
+  private static final String CONTRACT_XML = "contract/cosn.xml";
+
+  protected CosNContract(Configuration conf) {
+    super(conf);
+    addConfResource(CONTRACT_XML);
+  }
+
+  @Override
+  public String getScheme() {
+    return CosNFileSystem.SCHEME;
+  }
+
+  @Override
+  public Path getTestPath() {
+    return CosNTestUtils.createTestPath(super.getTestPath());
+  }
+}

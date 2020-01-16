@@ -16,3 +16,18 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn;
+
+/**
+ * Configuration options for the CosN file system for testing.
+ */
+public final class CosNTestConfigKey {
+  private CosNTestConfigKey() {
+  }
+
+  public static final String TEST_COS_FILESYSTEM_CONF_KEY =
+      "test.fs.cosn.name";
+  public static final String DEFAULT_TEST_COS_FILESYSTEM_CONF_VALUE =
+      "";
+  public static final String TEST_UNIQUE_FORK_ID_KEY =
+      "test.unique.fork.id";
+}

@@ -16,3 +16,17 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn;
+
+/**
+ * Constant definition of storage unit.
+ */
+public final class Unit {
+  private Unit() {
+  }
+
+  public static final int KB = 1024;
+  public static final int MB = 1024 * KB;
+  public static final int GB = 1024 * MB;
+  public static final long TB = (long) 1024 * GB;
+  public static final long PB = (long) 1024 * TB;
+}

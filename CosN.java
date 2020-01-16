@@ -16,3 +16,26 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.DelegateToFileSystem;
+
+/**
+ * CosN implementation for the Hadoop's AbstractFileSystem.
+ * This implementation delegates to the CosNFileSystem {@link CosNFileSystem}.
+ */
+public class CosN extends DelegateToFileSystem {
+  public CosN(URI theUri, Configuration conf)
+      throws IOException, URISyntaxException {
+    super(theUri, new CosNFileSystem(), conf, CosNFileSystem.SCHEME, false);
+  }
+
+  @Override
+  public int getUriDefaultPort() {
+    return -1;
+  }
+}

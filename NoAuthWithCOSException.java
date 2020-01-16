@@ -15,4 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.hadoop.fs.cosn;
+package org.apache.hadoop.fs.cosn.auth;
+
+import com.qcloud.cos.exception.CosClientException;
+
+/**
+ * Exception thrown when no credentials can be obtained.
+ */
+public class NoAuthWithCOSException extends CosClientException {
+  public NoAuthWithCOSException(String message, Throwable t) {
+    super(message, t);
+  }
+
+  public NoAuthWithCOSException(String message) {
+    super(message);
+  }
+
+  public NoAuthWithCOSException(Throwable t) {
+    super(t);
+  }
+}
