@@ -16,3 +16,17 @@
  * limitations under the License.
  */
 package org.apache.hadoop.fs.cosn.contract;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.contract.AbstractContractRenameTest;
+import org.apache.hadoop.fs.contract.AbstractFSContract;
+
+/**
+ * CosN contract tests for renaming a file.
+ */
+public class TestCosNContractRename extends AbstractContractRenameTest {
+  @Override
+  protected AbstractFSContract createContract(Configuration configuration) {
+    return new CosNContract(configuration);
+  }
+}
