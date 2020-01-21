@@ -1,16 +1,16 @@
 /*
- * Copyright (c) 2007 Mockito contributors
+ * Copyright (c) 2019 Mockito contributors
  * This program is made available under the terms of the MIT License.
  */
-package org.mockito.exceptions.verification.junit;
+package org.mockito.exceptions.verification.opentest4j;
 
 import static org.mockito.internal.util.StringUtil.removeFirstLine;
 
-import junit.framework.ComparisonFailure;
 import org.mockito.internal.exceptions.stacktrace.ConditionalStackTraceFilter;
+import org.opentest4j.AssertionFailedError;
 
 
-public class ArgumentsAreDifferent extends ComparisonFailure {
+public class ArgumentsAreDifferent extends AssertionFailedError {
 
     private static final long serialVersionUID = 1L;
     private final String message;
